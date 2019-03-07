@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'primeiros-passos-angular';
+  nome = 'Leandro Barros';
+  idade = 12;
+
+  getIdade(){
+    return this.idade;
+  }
 }
