@@ -5,10 +5,10 @@
 
   <div class="form-group">
     <label>Nome</label>
-    <input type="text" class="form-control" 
-            (input)="nome = nomeInput.value" #nomeInput [value]="nome">
+    <input type="text" class="form-control" [(ngModel)]="nome" #nomeInput
+            >
   </div>
 
   <button type="button" class="btn btn-primary" 
-          (click)="adicionar(nomeInput.value)" [disabled]="nome.length == 0" >Adicionar</button>
+          (click)="adicionar()" [disabled]="nome.length == 0" >Adicionar</button>
 </div>
