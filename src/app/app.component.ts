@@ -11,4 +11,8 @@ export class AppComponent {
   adicionar(nome : string){
     this.nome = nome;
   }
+
+  alterar(event : any){
+    this.nome = event.value;
+  }
 }
