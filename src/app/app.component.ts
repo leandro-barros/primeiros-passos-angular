@@ -12,7 +12,4 @@ export class AppComponent {
     this.nome = nome;
   }
 
-  alterar(event : any){
-    this.nome = event.value;
-  }
 }

@@ -5,7 +5,8 @@
 
   <div class="form-group">
     <label>Nome</label>
-    <input type="text" class="form-control" (input)="alterar(nomeInput)" #nomeInput [value]="nome">
+    <input type="text" class="form-control" 
+            (input)="nome = nomeInput.value" #nomeInput [value]="nome">
   </div>
 
   <button type="button" class="btn btn-primary" 
