@@ -1,7 +1,7 @@
 <div class="container">
-                                                <!-- pode ser com [hidden]="!adicionado" -->
+  <!-- pode ser com [hidden]="!adicionado" -->
   <div class="alert alert-primary" role="alert" *ngIf="adicionado">
-    Funcionário adicionado <strong>{{nome}}</strong> 
+    Funcionário adicionado <strong>{{nome}}</strong>
   </div>
 
   <div class="form-group">
@@ -9,6 +9,17 @@
     <input type="text" class="form-control" [(ngModel)]="nome" #nomeInput (focus)="adicionado = false">
   </div>
 
-  <button type="button" class="btn btn-primary" 
-          (click)="adicionar()" [disabled]="nome.length == 0" >Adicionar</button>
+  <button type="button" class="btn btn-primary" (click)="adicionar()" [disabled]="nome.length == 0"
+          >Adicionar</button>
+
+
+  <div class="row" style="margin-top: 20px">
+    <div class="col-2" *ngFor="let f of funcionarios">
+      <div class="card">
+        <img src="https://randomuser.me/api/portraits/women/{{f.id}}.jpg">
+        <div class="card-body">{{f.nome}}</div>
+      </div>
+    </div>
+  </div>
+
 </div>
