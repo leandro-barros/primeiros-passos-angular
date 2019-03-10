@@ -17,8 +17,7 @@ export class AppComponent {
     this.funcionarios.push({
       id : ++this.ultimoId,
       nome : this.nome
-    }
-    );
+    });
   }
 
 }
