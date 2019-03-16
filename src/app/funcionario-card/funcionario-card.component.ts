@@ -4,27 +4,35 @@ import { Component, OnInit, Input } from '@angular/core';
   selector: 'app-funcionario-card',
   templateUrl: './funcionario-card.component.html',
   // styleUrls: ['./funcionario-card.component.css']
-  styles : [
+  styles: [
     `.card-body{
         text-transform : uppercase;
         color : white;
       }`,
-      // `
-      //   .card{     Pode colocar vários
-      //     padding : 10px;
-      //   }
-      // `
+    // `
+    //   .card{     Pode colocar vários
+    //     padding : 10px;
+    //   }
+    // `
   ]
 })
 export class FuncionarioCardComponent {
 
-  @Input('funcionario') funcionario : any;
+  @Input('funcionario') funcionario: any;
 
-  getEstilosCartao(){
+  getEstilosCartao() {
     return {
-      'border-width.px' : this.funcionario.id,
-      backgroundColor : this.funcionario.id % 2 === 0 ? 'red' : 'green'
+      'border-width.px': this.funcionario.id,
+      backgroundColor: this.funcionario.id % 2 === 0 ? 'lightgreen' : 'lightblue'
     }
+  }
+
+  getClassCss() {
+    return ['badge', 'badge-primary'];
+  }
+
+  isAdmin(){
+    return this.funcionario.nome.startsWith('T');
   }
 
 }
