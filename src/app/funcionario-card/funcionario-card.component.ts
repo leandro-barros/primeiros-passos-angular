@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styles : [
     `.card-body{
         text-transform : uppercase;
-        color : blue;
+        color : white;
       }`,
       // `
       //   .card{     Pode colocar vários
@@ -19,5 +19,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class FuncionarioCardComponent {
 
   @Input('funcionario') funcionario : any;
+
+  getEstilosCartao(){
+    return {
+      'border-width.px' : this.funcionario.id,
+      backgroundColor : this.funcionario.id % 2 === 0 ? 'red' : 'green'
+    }
+  }
 
 }
