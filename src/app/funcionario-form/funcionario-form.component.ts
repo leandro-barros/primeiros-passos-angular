@@ -11,14 +11,13 @@ export class FuncionarioFormComponent {
   adicionado = false;
 
   @Output() funcionarioAdicionado = new EventEmitter();
-  
 
-  adicionar(){
+  adicionar() {
     this.adicionado = true;
 
     const funcionaro = {
-      id : ++this.ultimoId,
-      nome : this.nome
+      id: ++this.ultimoId,
+      nome: this.nome
     };
 
     this.funcionarioAdicionado.emit(funcionaro);
