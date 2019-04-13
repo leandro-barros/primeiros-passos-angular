@@ -1,32 +1,23 @@
-import { Directive, ElementRef, Renderer2, HostListener, HostBinding } from '@angular/core';
+import { Directive, ElementRef, Renderer2, HostListener, HostBinding, Input } from '@angular/core';
 
 @Directive({
   selector: '[appCampoColorido]'
   // selector: '[input]' Caso queira colocar a diretiva personalizada em todos os inputs
 })
 export class CampoColoridoDirective {
-  
-  // O valor da váriavel corDeFundo vai ser atribuida a propriedade background de estilos, fazendo um binding, vinculando.
-  @HostBinding('style.backgroundColor') corDeFundo : string;
 
-  
-  // A parte comentada faz a mesma coisa;
+  @Input('appCampoColorido') cor = 'blue';
 
-  // constructor(
-  //   private elementRef: ElementRef,
-  //   private renderer: Renderer2
-  // ) { }
+  // Usado para passar a property binding cor e a diretiva appCampoColorido no input sem o alias
+  // @Input() cor = 'blue';
 
+  @HostBinding('style.backgroundColor') corDeFundo: string;
 
   @HostListener('focus') aoGanharFoco() {
-    this.corDeFundo = 'yellow';
-    // this.renderer.setStyle(this.elementRef.nativeElement,
-    //   'background-color', 'yellow');
+    this.corDeFundo = this.cor;
   }
-  
+
   @HostListener('blur') aoPerdeFocus() {
     this.corDeFundo = 'transparent';
-    // this.renderer.setStyle(this.elementRef.nativeElement,
-    //   'background-color', 'transparent');
   }
 }

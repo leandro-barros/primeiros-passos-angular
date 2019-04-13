@@ -6,7 +6,11 @@
 <div class="form-group">
   <label>Nome</label>
   <input type="text" class="form-control" [(ngModel)]="nome" #nomeInput
-            (focus)="adicionado = false" appCampoColorido>
+            (focus)="adicionado = false" [appCampoColorido]="'red'">
+             <!-- Fazendo o property binding com o proprio nome da diretiva -->
+
+            <!-- (focus)="adicionado = false" appCampoColorido [cor]="'red'"> -->
+            <!-- Pode passar a property binding cor e a diretiva appCampoColorido -->
 </div>
 
 <button type="button" class="btn btn-primary" (click)="adicionar()" [disabled]="nome.length == 0"
