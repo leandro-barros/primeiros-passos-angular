@@ -1,8 +1,10 @@
 import { Directive, ElementRef, Renderer2, HostListener, HostBinding, Input } from '@angular/core';
 
 @Directive({
-  selector: '[appCampoColorido]'
+  selector: '[appCampoColorido]',
   // selector: '[input]' Caso queira colocar a diretiva personalizada em todos os inputs
+
+  exportAs: 'campoColorido'
 })
 export class CampoColoridoDirective {
 
@@ -13,11 +15,11 @@ export class CampoColoridoDirective {
 
   @HostBinding('style.backgroundColor') corDeFundo: string;
 
-  @HostListener('focus') aoGanharFoco() {
+  @HostListener('focus') colorir() {
     this.corDeFundo = this.cor;
   }
 
-  @HostListener('blur') aoPerdeFocus() {
+  @HostListener('blur') descolorir() {
     this.corDeFundo = 'transparent';
   }
 }
