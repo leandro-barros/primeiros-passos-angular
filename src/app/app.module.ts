@@ -7,6 +7,7 @@ import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.co
 import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { PipesComponent } from './pipes/pipes.component';
+import { FormulariosValidacaoComponent } from './formularios-validacao/formularios-validacao.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PipesComponent } from './pipes/pipes.component';
     FuncionarioCardComponent,
     FuncionarioFormComponent,
     CampoColoridoDirective,
-    PipesComponent
+    PipesComponent,
+    FormulariosValidacaoComponent
   ],
   imports: [
     BrowserModule,

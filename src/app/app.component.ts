@@ -9,7 +9,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   funcionarios = [];
 
-  aoAdicionar(funcionario){
+  aoAdicionar(funcionario) {
     this.funcionarios.push(funcionario);
+  }
+
+  estiloPipes(modulo: any) {
+    return {
+      color: modulo === 'p' ? 'green' : 'blue',
+      'margin-top.px': '123'
+    };
   }
 }
