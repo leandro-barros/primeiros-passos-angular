@@ -1,19 +1,22 @@
 <div class="container">
+    <!-- ngNoForm - Faz com que o angular pare de gerenciar o formulário. -->
   <form  #usuarioForm="ngForm" (ngSubmit)="salvar(usuarioForm)">
 
     <div class="form-group">
       <label class="form-control-label">Nome</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" name="nome" ngModel>
+      <!-- ngModel - Cria instância de controler de form do tipo formController vinculando com o input do formulário, 
+        sem o twoei-data-binding, apenas para registrar o controle no formulário  -->
     </div>
 
     <div class="form-group">
       <label class="form-control-label">E-mail</label>
-      <input type="text" class="form-control">
+      <input type="text" class="form-control" name="email" ngModel>
     </div>
 
     <div class="form-group">
       <label class="form-control-label">Profissão</label>
-      <select class="form-control">
+      <select class="form-control" name="profissao" ngModel>
         <option value="">Selecione</option>
         <option>Engenheiro</option>
         <option>Dentista</option>
