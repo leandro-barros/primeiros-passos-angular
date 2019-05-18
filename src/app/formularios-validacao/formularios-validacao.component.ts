@@ -17,7 +17,6 @@ export class FormulariosValidacaoComponent {
 
   cliente = new Cliente();
   profissoes = ['Programador', 'Empresário', 'Outra'];
-  profissao = 'Outra';
 
   salvar(form: NgForm) {
     // this.cliente.nome = form.value.nome;
