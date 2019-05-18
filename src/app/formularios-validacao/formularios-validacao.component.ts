@@ -23,9 +23,9 @@ export class FormulariosValidacaoComponent {
     // this.cliente.nome = form.value.nome;
     // this.cliente.email = form.value.email;
     // this.cliente.profissao = form.value.profissao;
-    
-    console.log(form.value); 
-    console.log(this.cliente);
+
+    console.log(form); 
+    // console.log(this.cliente);
   }
 
 }
