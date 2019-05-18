@@ -1,5 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { from } from 'rxjs';
+
+class Cliente{
+  nome : string;
+  email:string;
+  profissao:string;
+}
 
 @Component({
   selector: 'app-formularios-validacao',
@@ -8,12 +15,17 @@ import { NgForm } from '@angular/forms';
 })
 export class FormulariosValidacaoComponent {
 
+  cliente = new Cliente();
   profissoes = ['Programador', 'Empresário', 'Outra'];
   profissao = 'Outra';
 
   salvar(form: NgForm) {
-    console.log(this.profissao);
-    console.log(form.value.profissao); 
+    // this.cliente.nome = form.value.nome;
+    // this.cliente.email = form.value.email;
+    // this.cliente.profissao = form.value.profissao;
+    
+    console.log(form.value); 
+    console.log(this.cliente);
   }
 
 }
