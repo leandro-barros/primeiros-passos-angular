@@ -8,9 +8,11 @@ import { NgForm } from '@angular/forms';
 })
 export class FormulariosValidacaoComponent {
 
+  profissoes = ['Programador', 'Empresário', 'Outras'];
+
   salvar(form: NgForm) {
     console.log(form);
-    console.log(form.value.nome);
+    console.log(form.value.nome); // Consegue pegar qualquer valor do formulário
   }
 
 }
