@@ -4,7 +4,7 @@
   <br>
   {{ usuarioForm.invalid }} -->
 
-  <div *ngIf="usuarioForm.invalid" class="alert alert-danger">
+  <div *ngIf="usuarioForm.invalid && usuarioForm.touched" class="alert alert-danger">
       Preencha todos os campos corretamente.
   </div>
  
@@ -15,14 +15,18 @@
       <input type="text" class="form-control" name="nome" [(ngModel)]="cliente.nome" required minlength="10" #nome="ngModel">
       <!-- <div *ngIf="nome.invalid">Informe um nome</div> Serve pra todos as validações-->
 
-      <div *ngIf="nome.hasError('required')">Informe um nome</div>
-      <div *ngIf="nome.hasError('minlength')">o nome deve ser completo</div>
+      <!-- Touched: {{ nome.touched }} <br> Quando o usuário ja teve a oportunidade preencher o campo
+      Pristine: {{ nome.pristine }} <br> Intacto não alterou nada no campo
+      Dirty: {{ nome.dirty }} <br> Campo que foi mexido -->
+
+      <div *ngIf="nome.hasError('required') && nome.dirty">Informe um nome</div>
+      <div *ngIf="nome.hasError('minlength') && nome.dirty">o nome deve ser completo</div>
     </div>
 
     <div class="form-group">
       <label class="form-control-label">E-mail</label>
       <input type="text" class="form-control" name="email" [(ngModel)]="cliente.email" required email #email="ngModel">
-      <div *ngIf="email.invalid">Informe um email válido</div>
+      <div *ngIf="email.invalid && email.touched" >Informe um email válido</div>
     </div>
     
     <div class="form-group">
@@ -31,7 +35,7 @@
         <option value="">Selecione</option>
         <option *ngFor="let profissao of profissoes" [value]="profissao">{{ profissao }}</option>
       </select>
-      <div *ngIf="profissao.invalid">Informe uma profissão</div>
+      <div *ngIf="profissao.invalid && profissao.touched">Informe uma profissão</div>
     </div>
 
     <button type="submit" class="btn btn-primary" 
