@@ -7,13 +7,13 @@
   <div *ngIf="usuarioForm.invalid && usuarioForm.dirty" class="alert alert-danger">
       Preencha todos os campos corretamente.
   </div>
- 
+  {{ cliente | json}}
   <form autocomplete="off" #usuarioForm="ngForm" (ngSubmit)="salvar(usuarioForm)">
 
     <div class="form-group" [class.has-danger]="nome.invalid && nome.touched">
       <label class="form-control-label">Nome</label>
       <input type="text" class="form-control " [class.is-invalid]="nome.invalid && nome.touched" 
-      name="nome" [(ngModel)]="cliente.nome" required minlength="10" #nome="ngModel">
+        name="nome" [(ngModel)]="cliente.nome" required minlength="10" #nome="ngModel">
       <!-- <div *ngIf="nome.invalid">Informe um nome</div> Serve pra todos as validações-->
 
       <!-- Touched: {{ nome.touched }} <br> Quando o usuário ja teve a oportunidade preencher o campo
@@ -29,7 +29,7 @@
     <div class="form-group" [class.has-danger]="email.invalid && email.touched">
       <label class="form-control-label">E-mail</label>
       <input type="text" class="form-control" [class.is-invalid]="email.invalid && email.touched" 
-       name="email" [(ngModel)]="cliente.email" required email #email="ngModel">
+          name="email" [(ngModel)]="cliente.email" required email #email="ngModel">
       <div *ngIf="email.invalid && email.touched" class="invalid-feedback"
       >Informe um email válido</div>
     </div>
@@ -37,7 +37,7 @@
     <div class="form-group" [class.has-danger]="profissao.invalid && profissao.touched">
       <label class="form-control-label">Profissão</label>
       <select class="form-control" [class.is-invalid]="profissao.invalid && profissao.touched"  
-        name="profissao" [(ngModel)]="cliente.profissao" required #profissao="ngModel">
+            name="profissao" [(ngModel)]="cliente.profissao" required #profissao="ngModel">
         <option value="">Selecione</option>
         <option *ngFor="let profissao of profissoes" [value]="profissao">{{ profissao }}</option>
       </select>

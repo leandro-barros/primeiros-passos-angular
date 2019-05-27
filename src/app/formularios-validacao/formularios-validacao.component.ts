@@ -5,7 +5,7 @@ import { from } from 'rxjs';
 class Cliente{
   nome : string;
   email:string;
-  profissao:string;
+  profissao = '';
 }
 
 @Component({
@@ -24,7 +24,7 @@ export class FormulariosValidacaoComponent {
     // this.cliente.profissao = form.value.profissao;
 
     console.log(form); 
-    // console.log(this.cliente);
+    form.reset({ profissao : '' });
   }
 
 }
