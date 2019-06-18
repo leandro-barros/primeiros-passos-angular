@@ -8,6 +8,7 @@ import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.co
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { PipesComponent } from './pipes/pipes.component';
 import { FormulariosValidacaoComponent } from './formularios-validacao/formularios-validacao.component';
+import { BotoesModule } from './botoes/botoes.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormulariosValidacaoComponent } from './formularios-validacao/formulari
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    BotoesModule
   ],
   providers: [],
   bootstrap: [AppComponent]
