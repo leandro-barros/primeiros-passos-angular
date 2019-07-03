@@ -1,6 +1,6 @@
 <div class="container">
 
-  <!-- {{ usuarioForm.valid }} 
+  <!-- {{ usuarioForm.valid }}
   <br>
   {{ usuarioForm.invalid }} -->
 
@@ -9,10 +9,10 @@
   </div>
   {{ cliente | json}}
   <form autocomplete="off" #usuarioForm="ngForm" (ngSubmit)="salvar(usuarioForm)">
-
+    <!-- teste -->
     <div class="form-group" [class.has-danger]="nome.invalid && nome.touched">
       <label class="form-control-label">Nome</label>
-      <input type="text" class="form-control " [class.is-invalid]="nome.invalid && nome.touched" 
+      <input type="text" class="form-control " [class.is-invalid]="nome.invalid && nome.touched"
         name="nome" [(ngModel)]="cliente.nome" required minlength="10" #nome="ngModel">
       <!-- <div *ngIf="nome.invalid">Informe um nome</div> Serve pra todos as validações-->
 
@@ -20,23 +20,23 @@
       Pristine: {{ nome.pristine }} <br> Intacto não alterou nada no campo
       Dirty: {{ nome.dirty }} <br> Campo que foi mexido -->
 
-      <div *ngIf="nome.hasError('required') && nome.touched" 
+      <div *ngIf="nome.hasError('required') && nome.touched"
       class="invalid-feedback">Informe um nome</div>
-      <div *ngIf="nome.hasError('minlength') && nome.touched" 
+      <div *ngIf="nome.hasError('minlength') && nome.touched"
       class="invalid-feedback">o nome deve ser completo</div>
     </div>
 
     <div class="form-group" [class.has-danger]="email.invalid && email.touched">
       <label class="form-control-label">E-mail</label>
-      <input type="text" class="form-control" [class.is-invalid]="email.invalid && email.touched" 
+      <input type="text" class="form-control" [class.is-invalid]="email.invalid && email.touched"
           name="email" [(ngModel)]="cliente.email" required email #email="ngModel">
       <div *ngIf="email.invalid && email.touched" class="invalid-feedback"
       >Informe um email válido</div>
     </div>
-    
+
     <div class="form-group" [class.has-danger]="profissao.invalid && profissao.touched">
       <label class="form-control-label">Profissão</label>
-      <select class="form-control" [class.is-invalid]="profissao.invalid && profissao.touched"  
+      <select class="form-control" [class.is-invalid]="profissao.invalid && profissao.touched"
             name="profissao" [(ngModel)]="cliente.profissao" required #profissao="ngModel">
         <option value="">Selecione</option>
         <option *ngFor="let profissao of profissoes" [value]="profissao">{{ profissao }}</option>
@@ -45,7 +45,7 @@
       class="invalid-feedback">Informe uma profissão</div>
     </div>
 
-    <button type="submit" class="btn btn-primary" 
+    <button type="submit" class="btn btn-primary"
       [disabled]="!usuarioForm.valid">Salvar</button>
   </form>
 
