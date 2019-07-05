@@ -9,7 +9,6 @@
   </div>
   {{ cliente | json}}
   <form autocomplete="off" #usuarioForm="ngForm" (ngSubmit)="salvar(usuarioForm)">
-    <!-- teste -->
     <div class="form-group" [class.has-danger]="nome.invalid && nome.touched">
       <label class="form-control-label">Nome</label>
       <input type="text" class="form-control " [class.is-invalid]="nome.invalid && nome.touched"

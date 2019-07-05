@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { BotaoGrandeComponent } from './botao-grande/botao-grande.component';
 
 @NgModule({
-  declarations: [BotaoGrandeComponent],
   imports: [
-    CommonModule
+    CommonModule // Pra subModulos
   ],
-  exports: [BotaoGrandeComponent]
+  declarations: [BotaoGrandeComponent],
+  exports: [BotaoGrandeComponent]  // Para outros Módulos usar o component
 })
 export class BotoesModule { }
