@@ -11,7 +11,8 @@ export class FuncionarioService {
   constructor(private logService: LogService) {}
 
   adicionar(nomeFuncionario: string) {
-    this.logService.log(`Adicionando nom ${nomeFuncionario}`);
+    this.logService.log(`Adicionando nome ${nomeFuncionario}`);
+
     const funcionario = {
       id: ++this.ultimoID,
       nome: nomeFuncionario
@@ -26,13 +27,3 @@ export class FuncionarioService {
   }
 }
 
-export class FuncionarioAbreviadoService extends FuncionarioService {
-
-  constructor(private numeroCaracteres: number) {
-    super();
-  }
-
-  adicionar(nome: string) {
-    super.adicionar(nome.substr(0, this.numeroCaracteres) + '...');
-  }
-}

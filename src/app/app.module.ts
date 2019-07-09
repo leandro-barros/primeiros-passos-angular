@@ -1,4 +1,3 @@
-import { LogService } from './log.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -11,12 +10,8 @@ import { PipesComponent } from './pipes/pipes.component';
 import { FormulariosValidacaoComponent } from './formularios-validacao/formularios-validacao.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { FuncionarioFormularioComponent } from './funcionario-formulario/funcionario-formulario.component';
-import { FuncionarioService, FuncionarioAbreviadoService } from './funcionario.service';
-
-// Caso queira instanciar a classe FuncionarioAbreviadoService que é filha de Funcionario
-const criarFuncionarioService = () => {
-  return new FuncionarioAbreviadoService(2);
-}
+import { FuncionarioService } from './funcionario.service';
+import { LogService } from './log.service';
 
 @NgModule({
   declarations: [
@@ -36,8 +31,6 @@ const criarFuncionarioService = () => {
   providers: [
     FuncionarioService,
     LogService
-    // { provide: 'LogPrefixo', useValue: 'LOG' }
-    // { provide: FuncionarioService, useFactory: criarFuncionarioService }
   ],
   bootstrap: [AppComponent]
 })
