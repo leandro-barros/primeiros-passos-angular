@@ -11,6 +11,7 @@ import { FormulariosValidacaoComponent } from './formularios-validacao/formulari
 import { BotoesModule } from './botoes/botoes.module';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { FuncionarioFormularioComponent } from './funcionario-formulario/funcionario-formulario.component';
+import { FuncionarioService } from './funcionario.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { FuncionarioFormularioComponent } from './funcionario-formulario/funcion
     FormsModule,
     NavegacaoModule
   ],
-  providers: [],
+  providers: [FuncionarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

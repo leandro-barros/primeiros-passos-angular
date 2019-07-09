@@ -9,11 +9,7 @@ import { FuncionarioService } from './../funcionario.service';
 })
 export class FuncionarioFormularioComponent {
 
-  funcionarioService: FuncionarioService;
-
-  constructor() {
-    this.funcionarioService = new FuncionarioService();
-  }
+  constructor(private funcionarioService: FuncionarioService) { }
 
   adicionar(nome: string) {
     this.funcionarioService.adicionar(nome);
