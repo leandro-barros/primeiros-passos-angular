@@ -3,5 +3,6 @@
   <input type="text" class="form-control" #nome>
 </div>
 
-<button [ngStyle]="{margin: '3px'}" type="button" class="btn btn-primary" (click)="adicionar()"
+<button [ngStyle]="{margin: '3px'}" type="button" class="btn btn-primary"
+        (click)="adicionar(nome.value)"
         [disabled]="nome.length == 0" >Adicionar</button>

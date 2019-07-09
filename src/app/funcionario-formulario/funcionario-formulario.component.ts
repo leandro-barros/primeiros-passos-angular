@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { FuncionarioService } from './../funcionario.service';
+
 @Component({
   selector: 'app-funcionario-formulario',
   templateUrl: './funcionario-formulario.component.html',
@@ -7,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FuncionarioFormularioComponent {
 
-  adicionar(nome: string) {
+  funcionarioService: FuncionarioService;
 
+  constructor() {
+    this.funcionarioService = new FuncionarioService();
+  }
+
+  adicionar(nome: string) {
+    this.funcionarioService.adicionar(nome);
   }
 
 }

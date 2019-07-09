@@ -1,6 +1,6 @@
 <div class="container">
     <h2>9. Fundamentos do Angular, componentes e data binding</h2>
- <app-funcionario-form (funcionarioAdicionado)="aoAdicionar($event)"></app-funcionario-form>
+  <app-funcionario-form (funcionarioAdicionado)="aoAdicionar($event)"></app-funcionario-form>
 
   <div class="row" style="margin-top: 20px">
     <div class="col-2" *ngFor="let f of funcionarios">
@@ -21,5 +21,11 @@
 
   <h2 [ngStyle]="estiloPipes('f')">15. Serviços e injeção de dependências</h2>
   <app-funcionario-formulario></app-funcionario-formulario>
+
+  <div class="row" style="margin-top: 20px">
+    <div class="col-2" *ngFor="let f of funcionarios">
+      <app-funcionario-card [funcionario]="f"></app-funcionario-card>
+    </div>
+  </div>
 </div>
 
