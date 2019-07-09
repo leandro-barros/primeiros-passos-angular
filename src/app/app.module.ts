@@ -2,27 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
-import { FuncionarioModule } from './funcionario/funcionario.module';
 import { AppComponent } from './app.component';
-// import { FuncionarioCardComponent } from './funcionario-card/funcionario-card.component';
+import { FuncionarioModule } from './funcionario/funcionario.module';
 import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { PipesComponent } from './pipes/pipes.component';
 import { FormulariosValidacaoComponent } from './formularios-validacao/formularios-validacao.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
-// import { FuncionarioFormularioComponent } from './funcionario-formulario/funcionario-formulario.component';
-// import { FuncionarioService } from './funcionario.service';
 import { LogService } from './log.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    // FuncionarioCardComponent,
     FuncionarioFormComponent,
     CampoColoridoDirective,
     PipesComponent,
     FormulariosValidacaoComponent
-    // FuncionarioFormularioComponent
   ],
   imports: [
     BrowserModule,

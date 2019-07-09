@@ -16,7 +16,6 @@ export class AppComponent implements OnInit {
     this.funcionarios = this.funcionarioService.consultar();
   }
 
-
   aoAdicionar(funcionario) {
     this.funcionarios.push(funcionario);
   }
