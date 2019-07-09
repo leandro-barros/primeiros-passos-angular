@@ -35,8 +35,8 @@ const criarFuncionarioService = () => {
   ],
   providers: [
     FuncionarioService,
-    LogService,
-    { provide: 'LogPrefixo', useValue: 'LOG' }
+    LogService
+    // { provide: 'LogPrefixo', useValue: 'LOG' }
     // { provide: FuncionarioService, useFactory: criarFuncionarioService }
   ],
   bootstrap: [AppComponent]

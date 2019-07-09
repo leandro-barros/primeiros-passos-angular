@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { LogService } from './../log.service';
 import { FuncionarioService } from './../funcionario.service';
 
 @Component({
@@ -11,12 +10,10 @@ import { FuncionarioService } from './../funcionario.service';
 export class FuncionarioFormularioComponent {
 
   constructor(
-    private funcionarioService: FuncionarioService,
-    private logService: LogService
+    private funcionarioService: FuncionarioService
   )  { }
 
   adicionar(nome: string) {
-    this.logService.log(`Adicionando ${nome}`);
     this.funcionarioService.adicionar(nome);
   }
 
