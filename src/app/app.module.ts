@@ -8,10 +8,9 @@ import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.co
 import { CampoColoridoDirective } from './campo-colorido.directive';
 import { PipesComponent } from './pipes/pipes.component';
 import { FormulariosValidacaoComponent } from './formularios-validacao/formularios-validacao.component';
-import { BotoesModule } from './botoes/botoes.module';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { FuncionarioFormularioComponent } from './funcionario-formulario/funcionario-formulario.component';
-import { FuncionarioService } from './funcionario.service';
+import { FuncionarioService, FuncionarioAbreviadoService } from './funcionario.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,9 @@ import { FuncionarioService } from './funcionario.service';
     FormsModule,
     NavegacaoModule
   ],
-  providers: [FuncionarioService],
+  providers: [
+    {provide: FuncionarioService, useClass: FuncionarioAbreviadoService }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
