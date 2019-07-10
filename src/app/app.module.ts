@@ -10,6 +10,7 @@ import { PipesComponent } from './pipes/pipes.component';
 import { FormulariosValidacaoComponent } from './formularios-validacao/formularios-validacao.component';
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { LogService } from './log.service';
+import { RequisicaoHTTPComponent } from './requisicao-http/requisicao-http.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LogService } from './log.service';
     FuncionarioFormComponent,
     CampoColoridoDirective,
     PipesComponent,
-    FormulariosValidacaoComponent
+    FormulariosValidacaoComponent,
+    RequisicaoHTTPComponent
   ],
   imports: [
     BrowserModule,
