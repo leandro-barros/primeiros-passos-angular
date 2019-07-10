@@ -1,18 +1,30 @@
 import { Component, OnInit } from '@angular/core';
+import { CidadeService } from '../cidade.service';
 
 @Component({
   selector: 'app-requisicao-http',
   templateUrl: './requisicao-http.component.html',
   styleUrls: ['./requisicao-http.component.css']
 })
-export class RequisicaoHTTPComponent {
+export class RequisicaoHTTPComponent implements OnInit {
   // json-server --watch src/data/db.json
-  cidades = [
-    { id: 1, nome: 'Uberlândia' },
-    { id: 2, nome: 'São Paulo' },
-    { id: 3, nome: 'Florianópolis' },
-    { id: 4, nome: 'Curitiba' }
-  ];
+
+  cidades = [];
+
+  constructor(private cidadeService: CidadeService) { }
+
+    ngOnInit() {
+      this.cidadeService.consultar()
+        .then(dadosCidades =>  {
+          this.cidades = dadosCidades;
+        });
+    }
+
+    // ngOnInit() { Outra Forma
+    //   this.cidadeService.consultar().subscribe(response => {
+    //     this.cidades = response;
+    //   });
+    // }
 
   adicionar(nome: string) {
     alert(nome);

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FuncionarioModule } from './funcionario/funcionario.module';
@@ -11,6 +12,7 @@ import { FormulariosValidacaoComponent } from './formularios-validacao/formulari
 import { NavegacaoModule } from './navegacao/navegacao.module';
 import { LogService } from './log.service';
 import { RequisicaoHTTPComponent } from './requisicao-http/requisicao-http.component';
+import { CidadeService } from './cidade.service';
 
 @NgModule({
   declarations: [
@@ -25,10 +27,12 @@ import { RequisicaoHTTPComponent } from './requisicao-http/requisicao-http.compo
     BrowserModule,
     FormsModule,
     NavegacaoModule,
-    FuncionarioModule
+    FuncionarioModule,
+    HttpClientModule
   ],
   providers: [
-    LogService
+    LogService,
+    CidadeService
   ],
   bootstrap: [AppComponent]
 })
