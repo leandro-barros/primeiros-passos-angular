@@ -13,22 +13,22 @@ export class RequisicaoHTTPComponent implements OnInit {
 
   constructor(private cidadeService: CidadeService) { }
 
-    ngOnInit() {
-      this.consultar();
-    }
+  ngOnInit() {
+    this.consultar();
+  }
 
-    consultar() {
-      this.cidadeService.consultar()
-        .then(dadosCidades =>  {
-          this.cidades = dadosCidades;
-        });
-    }
+  consultar() {
+    this.cidadeService.consultar()
+      .then(dadosCidades => {
+        this.cidades = dadosCidades;
+      });
+  }
 
-    // ngOnInit() { Outra Forma
-    //   this.cidadeService.consultar().subscribe(response => {
-    //     this.cidades = response;
-    //   });
-    // }
+  // ngOnInit() { Outra Forma
+  //   this.cidadeService.consultar().subscribe(response => {
+  //     this.cidades = response;
+  //   });
+  // }
 
   adicionar(nome: string) {
     this.cidadeService.adicionar({ nome }) // Mesma coisa de this.cidadeService.adicionar({ nome: nome })
@@ -43,11 +43,14 @@ export class RequisicaoHTTPComponent implements OnInit {
       .then(() => {
         alert('Cidade excluida com sucesso !');
         this.consultar();
-      } );
+      });
   }
 
   atualizar(cidade: any) {
-    alert(JSON.stringify(cidade));
+    this.cidadeService.atualizar(cidade)
+      .then(() => {
+        alert('Cidade alterada com sucesso !');
+      });
   }
 
 
