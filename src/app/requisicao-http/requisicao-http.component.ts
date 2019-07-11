@@ -14,6 +14,10 @@ export class RequisicaoHTTPComponent implements OnInit {
   constructor(private cidadeService: CidadeService) { }
 
     ngOnInit() {
+      this.consultar();
+    }
+
+    consultar() {
       this.cidadeService.consultar()
         .then(dadosCidades =>  {
           this.cidades = dadosCidades;
@@ -27,7 +31,11 @@ export class RequisicaoHTTPComponent implements OnInit {
     // }
 
   adicionar(nome: string) {
-    alert(nome);
+    this.cidadeService.adicionar({ nome }) // Mesma coisa de this.cidadeService.adicionar({ nome: nome })
+      .then(cidade => {
+        alert(`Cidade "${cidade.nome}" adicionada com o código ${cidade.id} ! `);
+        this.consultar();
+      });
   }
 
   excluir(id: number) {

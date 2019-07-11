@@ -18,4 +18,10 @@ export class CidadeService {
   // consultar(): Observable<any> { Outra Forma
   //   return this.http.get<any>('http://localhost:3000/cidades');
   // }
+
+  adicionar(cidade: any): Promise<any> {
+    return this.http.post('http://localhost:3000/cidades', cidade)
+      .toPromise()
+      .then(response => response);
+  }
 }
